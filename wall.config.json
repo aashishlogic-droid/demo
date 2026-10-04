@@ -1,7 +1,7 @@
 {
-  "repo": "OWNER/the-wall",
+  "repo": "shashpicious/the-wall",
   "siteUrl": "https://wall.designengineer.pro/",
-  "cname": "",
+  "cname": "wall.designengineer.pro",
   "bookName": "The Craft of Design Engineering",
   "bookUrl": "https://designengineer.pro/book"
 }
