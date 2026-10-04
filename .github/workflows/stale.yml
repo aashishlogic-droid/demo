@@ -1,0 +1,27 @@
+# Closes card pull requests that were flagged and then left for 14 days. Kindly.
+name: stale-cards
+on:
+  schedule:
+    - cron: '17 6 * * *'
+  workflow_dispatch:
+permissions: {}
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      issues: write
+    steps:
+      - uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const cutoff = Date.now() - 14 * 24 * 3600 * 1000;
+            const prs = await github.paginate(github.rest.pulls.list, { owner, repo, state: 'open', per_page: 100 });
+            for (const pr of prs) {
+              if (!pr.labels.some((l) => l.name === 'needs-changes')) continue;
+              if (new Date(pr.updated_at).getTime() > cutoff) continue;
+              await github.rest.issues.createComment({ owner, repo, issue_number: pr.number,
+                body: 'Closing this for now, since it has been quiet for two weeks. You can start again any time from the wall\'s page.' });
+              await github.rest.pulls.update({ owner, repo, pull_number: pr.number, state: 'closed' });
+            }

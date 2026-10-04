@@ -1,0 +1,1 @@
+# Link domains never accepted on cards (one per line, no www.).

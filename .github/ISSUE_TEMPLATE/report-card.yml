@@ -1,0 +1,25 @@
+name: Report or remove a card
+description: Ask for a card to be removed, yours or someone else's.
+title: "Card: "
+body:
+  - type: input
+    id: handle
+    attributes:
+      label: Which card? (GitHub username)
+    validations:
+      required: true
+  - type: dropdown
+    id: reason
+    attributes:
+      label: Why?
+      options:
+        - It's mine and I'd like it removed
+        - It's spam or an ad
+        - It's offensive or harassing
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Anything else we should know?

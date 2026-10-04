@@ -1,0 +1,1 @@
+# One GitHub username per line. Cards from these accounts are refused.

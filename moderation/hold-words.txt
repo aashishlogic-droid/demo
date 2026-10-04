@@ -1,0 +1,1 @@
+# Words that send a card to a person for review instead of auto-merge. One per line.

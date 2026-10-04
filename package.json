@@ -1,0 +1,10 @@
+{
+  "name": "the-wall",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "test": "node --test scripts/*.test.mjs",
+    "build": "node scripts/build-wall.mjs"
+  }
+}
