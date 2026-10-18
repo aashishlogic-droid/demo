@@ -3,7 +3,7 @@
 A public wall of designers who shipped their first pull request. Each card is one small file in
 [`designers/`](designers), added by pull request, checked by a bot, and merged automatically when it's right.
 
-This is the shared repo from Chapter 1 of *The Craft of Design Engineering*.
+This is the shared repo from "Your first pull request", the interlude after Chapter 1 of *The Craft of Design Engineering*.
 
 ## Add your card
 
